@@ -1,0 +1,8 @@
+Data science is the study of data
+Python is the best language for data science
+the data scientist loves Python and data
+Statistics and probability are the core of data science
+a good model needs good data
+Python makes data cleaning easy
+the model learns from the data
+Science is fun and Python is fun

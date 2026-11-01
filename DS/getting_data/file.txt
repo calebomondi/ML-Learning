@@ -1,0 +1,10 @@
+hey, welcome to data science
+this line has no numbers
+I have 3 cats and 2 dogs
+the quick brown fox jumps over the lazy dog
+hey there, the meeting is at 10am
+python 3.12 is installed
+nothing to see here
+hey hey hey
+call me at 555-1234
+the end
