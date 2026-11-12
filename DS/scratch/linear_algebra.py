@@ -4,10 +4,47 @@ import math
 Vector = List[float]
 
 
+def add(v: Vector, w: Vector) -> Vector:
+    """Adds corresponding elements"""
+    assert len(v) == len(w), "vectors must be the same length"
+    return [v_i + w_i for v_i, w_i in zip(v, w)]
+
+
 def subtract(v: Vector, w: Vector) -> Vector:
     """Subtracts corresponding elements"""
     assert len(v) == len(w), "vectors must be the same length"
     return [v_i - w_i for v_i, w_i in zip(v, w)]
+
+
+def vector_sum(vectors: List[Vector]) -> Vector:
+    """Sums all corresponding elements"""
+    # Check that vectors is not empty
+    assert vectors, "no vectors provided!"
+
+    # Check the vectors are all the same size
+    num_elements = len(vectors[0])
+    assert all(len(v) == num_elements for v in vectors), "different sizes!"
+
+    # the i-th element of the result is the sum of every vector[i]
+    return [sum(vector[i] for vector in vectors)
+            for i in range(num_elements)]
+
+
+def scalar_multiply(c: float, v: Vector) -> Vector:
+    """Multiplies every element by c"""
+    return [c * v_i for v_i in v]
+
+
+def vector_mean(vectors: List[Vector]) -> Vector:
+    """Computes the element-wise average"""
+    n = len(vectors)
+    return scalar_multiply(1/n, vector_sum(vectors))
+
+
+assert add([1, 2, 3], [4, 5, 6]) == [5, 7, 9]
+assert vector_sum([[1, 2], [3, 4], [5, 6], [7, 8]]) == [16, 20]
+assert scalar_multiply(2, [1, 2, 3]) == [2, 4, 6]
+assert vector_mean([[1, 2], [3, 4], [5, 6]]) == [3, 4]
 
 
 def dot(v: Vector, w: Vector) -> float:
